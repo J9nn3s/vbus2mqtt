@@ -17,8 +17,8 @@ After=network.target mosquitto.service
 Requires=mosquitto.service
 
 [Service]
-ExecStart=/usr/bin/python3 /home/resol-vbus/vbus2mqtt/vbus2mqtt.py
-WorkingDirectory=/home/resol-vbus/vbus2mqtt/
+ExecStart=/usr/bin/python3 /home/resol-vbus/vbus2mqtt-main/vbus2mqtt.py
+WorkingDirectory=/home/resol-vbus/vbus2mqtt-main/
 Restart=always
 User=resol-vbus
 RestartSec=5

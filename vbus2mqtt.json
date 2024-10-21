@@ -7,7 +7,7 @@
         "vsf": "vbus_specification.vsf"
     },
     "mqtt": {
-        "host": "localhost",
+        "host": "192.168.1.249",
         "port": 1883,
         "user": "myuser",
         "pass": "mypass123",
@@ -44,7 +44,7 @@
             "type": "direct",
             "field": {
                 "name": null,
-                "item": "00_0010_7321_10_0100_000_2_0" // Temperature sensor 1
+                "item": "00_0010_7341_10_0100_000_2_0" // S1-SF-K
             }
         },
         {
@@ -55,31 +55,80 @@
             },
             "trigger": {
                 "type": "interval",
-                "interval": 5
+                "interval": 60
             },
             "type": "json",
             "fields": [
                 {
                     "group": "temperatures",
                     "fields": [
+                      {
+                        "name": "Solarfuehler-Kollektor",
+                        "item": "00_0010_7341_10_0100_000_2_0" // Temperature sensor 1
+                      },
+                      {
+                        "name": "S2-SF-1",
+                        "item": "00_0010_7341_10_0100_002_2_0"
+                      },
+                      {
+                        "name": "S3-SF-2",
+                        "item": "00_0010_7341_10_0100_004_2_0"
+                      },
+                      {
+                        "name": "S4-SF-3/WT/F-RLA1/RLU1",
+                        "item": "00_0010_7341_10_0100_006_2_0"
+                      },
+                      {
+                        "name": "S5-FN-HK/F-RLA2",
+                        "item": "00_0010_7341_10_0100_008_2_0"
+                      },
+                      {
+                        "name": "S7-FN-K2",
+                        "item": "00_0010_7341_10_0100_012_2_0"
+                      },
+                      {
+                        "name": "S9-AF",
+                        "item": "00_0010_7341_10_0100_016_2_0"
+                      },
+                      {
+                        "name": "S10-VL-F1",
+                        "item": "00_0010_7341_10_0100_018_2_0"
+                      },
+                      {
+                        "name": "S14-KF-1/KF-NH",
+                        "item": "00_0010_7341_10_0100_026_2_0"
+                      },
+                      {
+                        "name": "S16-BF/BF-1/F-RLU2",
+                        "item": "00_0010_7341_10_0100_030_2_0"
+                      },
                         {
-                            "name": "panel",
-                            "item": "00_0010_7321_10_0100_000_2_0" // Temperature sensor 1
+                            "group": "Flowset",
+                            "fields": [
+                              {
+                                "name": "HC_1_T_Flowset",
+                                "item": "00_0010_7341_10_0100_072_2_0"
+                              },
+                              {
+                                "name": "SW_FL_Set0",
+                                "item": "00_0010_7341_10_0100_082_2_0"
+                              }
+                            ]
                         },
                         {
                             "group": "buffer",
                             "fields": [
                                 {
                                     "name": "bot",
-                                    "item": "00_0010_7321_10_0100_002_2_0" // Temperature sensor 2
+                                    "item": "00_0010_7341_10_0100_002_2_0" // Temperature sensor 2
                                 },
                                 {
                                     "name": "mid",
-                                    "item": "00_0010_7321_10_0100_012_2_0" // Temperature sensor 7
+                                    "item": "00_0010_7341_10_0100_012_2_0" // Temperature sensor 7
                                 },
                                 {
                                     "name": "top",
-                                    "item": "00_0010_7321_10_0100_014_2_0" // Temperature sensor 8
+                                    "item": "00_0010_7341_10_0100_030_2_0" // Temperature sensor 8
                                 }
                             ]
                         }
@@ -87,27 +136,75 @@
                 },
                 {
                     "group": "pumps",
-                    "fields": [
-                        {
-                            "name": "solar_pri",
-                            "item": "00_0010_7321_10_0100_044_1_0" // Pump speed relay 1
-                        },
-                        {
-                            "name": "solar_sec",
-                            "item": "00_0010_7321_10_0100_045_1_0" // Pump speed relay 2
-                        }
-                    ]
+                  "fields": [
+                    {
+                      "name": "R1-SP-1 - solar_pri",
+                      "item": "00_0010_7341_10_0100_056_1_0" // Pump speed relay 1
+                    },
+                    {
+                      "name": "R2-SP-2 - solar_sec",
+                      "item": "00_0010_7341_10_0100_057_1_0" // Pump speed relay 2
+                    },
+                    {
+                      "name": "R3-BLP/1",
+                      "item": "00_0010_7341_10_0100_058_1_0"
+                    },
+                    {
+                      "name": "R4-SV1/V-RLU",
+                      "item": "00_0010_7341_10_0100_059_1_0"
+                    },
+                    {
+                      "name": "R5-HKP1",
+                      "item": "00_0010_7341_10_0100_060_1_0"
+                    },
+                    {
+                      "name": "R6-MV-1 auf",
+                      "item": "00_0010_7341_10_0100_061_1_0"
+                    },
+                    {
+                      "name": "R7-MV-1 zu",
+                      "item": "00_0010_7341_10_0100_062_1_0"
+                    },
+                    {
+                      "name": "R8-KLP-1/HKP-2",
+                      "item": "00_0010_7341_10_0100_063_1_0"
+                    },
+                    {
+                      "name": "R9-KLP-2/SP-3",
+                      "item": "00_0010_7341_10_0100_064_1_0"
+                    },
+                    {
+                      "name": "R10-SV-2/HKP-2/V-RL",
+                      "item": "00_0010_7341_10_0100_065_1_0"
+                    },
+                    {
+                      "name": "R11-MV-2 auf/BLP-2/SV-3",
+                      "item": "00_0010_7341_10_0100_066_1_0"
+                    },
+                    {
+                      "name": "R12-MV-2 zu/SV-3/V-RLU",
+                      "item": "00_0010_7341_10_0100_067_1_0"
+                    },
+                    {
+                      "name": "R13-ZP",
+                      "item": "00_0010_7341_10_0100_068_1_0"
+                    },
+                    {
+                      "name": "R14-RP",
+                      "item": "00_0010_7341_10_0100_069_1_0"
+                    }
+                  ]
                 },
                 {
                     "group": "status",
                     "fields": [
                         {
                             "name": "sys_errors",
-                            "item": "00_0010_7321_10_0100_060_2_0" // Error mask
+                            "item": "00_0010_7341_10_0100_120_2_0" // Error mask
                         },
                         {
                             "name": "sys_warnings",
-                            "item": "00_0010_7321_10_0100_062_2_0" // Warning mask
+                            "item": "00_0010_7341_10_0100_122_2_0" // Warning mask
                         }
                     ]
                 }
